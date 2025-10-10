@@ -4,11 +4,14 @@ import { useDispatch } from "react-redux";
 import { addTodo } from "../store/todoSlice";
 
 const TodoForm = ({
+  
   OnSubmit,
   OnCancel,
   initialValue = "",
   placeholder = "Add new todo",
+  
 }) => {
+
   const dispatch = useDispatch(initialValue);
   const [text, setText] = useState(initialValue);
   const inputRef = useRef(null);
@@ -24,6 +27,7 @@ const TodoForm = ({
       setText("");
     }
   };
+
   return (
     <div className=" flex items-center gap-3" onSubmit={handleSubmit}>
       <div className=" flex-1">
